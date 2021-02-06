@@ -49,37 +49,27 @@
 {% endif %}
   <div class="jumbotron">
     <div class="header">{{header}}</div>
-    <form method='POST' action=''>{% csrf_token %}
-        {{form|crispy}}
-        <input type="submit" value='Search'/>
-    </form>
+    
     <br>
-    <div class="display_table">
-        <table class='table'>
-            <thead>
-            <tr>
-                <th>COUNT</th>
-                <th>CATEGORY</th>
-                <th>ITEM NAME</th>
-                <th>QUANTITY IN STORE</th>
-                <th>TIMESTAMP</th>
-                <th>LAST UPDATE</th>
-                <th>DELETE</th>
-            </tr>
-            </thead>
-        {% for instance in queryset %}
-            <tr>
-                <td>{{forloop.counter}}</td>
-                <td>{{instance.category}}</td>
-                <td><a href="{% url 'update_items' instance.id %}">{{instance.item_name}}</a></td>
-                <td><a href="{% url 'stock_detail' instance.id %}">{{instance.quantity}} Casiers</a></td>
-                <td>{{instance.timestamp}}</td>
-                <td>{{instance.last_updated}}</td>
-                <td><a href="{% url 'delete_items' instance.id %}"><img src="{% static 'images/trash.png' %}"></a></td>
-            </tr>
-        {% endfor %}
-        </table>
-  </div>
+    <a href="{% url 'issue_items' queryset.id %}"><div class='btn btn-danger'>ISSUE THIS ITEM</div></a>
+    <a href="{% url 'receive_items' queryset.id %}"><div class='btn btn-primary'>RECEIVE THIS ITEM</div></a>
+        <br><br>
+        <div class="display_table">
+          <table class='table'>
+                  <tr>
+                    <th>ITEM NAME</th>
+                    <th>QUANTITY IN STORE</th>
+                    <th>LAST UPDATED</th>
+                    <th>REORDER LEVEL</th>
+                  </tr>
+                  <tr>
+                    <td>{{queryset.item_name}}</td>
+                    <td>{{queryset.quantity}}</td>
+                    <td>{{queryset.last_updated}}</td>
+                    <td>{{queryset.reorder_level}}</td>
+                  </tr>
+          </table>
+        </div>
 </main>
 
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
