@@ -30,7 +30,7 @@ th {
 	padding-left: 5px;
 	padding-right: 5px;
 	padding-bottom: 20px;
-	box-shadow: 12px 12px 20px 6px #2e6da4;
+	box-shadow: 12px 12px 10px #2e6da4;
 }
 .header {
     font-family: helvetica;
@@ -48,4 +48,7 @@ th {
 	color: white;
 	box-shadow: 12px 12px 12px #e61c66;
 	text-align: center;
+}
+.mybutton{
+	widht: 100%;
 }
