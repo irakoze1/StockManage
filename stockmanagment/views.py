@@ -169,7 +169,6 @@ def list_history(request):
     context = {
         "header": header,
         "queryset": queryset,
-        "form": form,
     }
     if request.method == 'POST':
         category = form['category'].value()
@@ -177,7 +176,9 @@ def list_history(request):
         queryset = StockHistory.objects.filter(
             item_name__icontains=form['item_name'].value(),
             last_updated__range=[
-                form['start_date'].value(), form['end_date'].value()]
+                form['start_date'].value(),
+                form['end_date'].value()
+            ]
         )
 
         if (category != ''):
