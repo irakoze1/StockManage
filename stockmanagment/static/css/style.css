@@ -1,6 +1,10 @@
 body 
 {
-    background: #34eb6b;
+	background: #34eb6b;
+	background-color: #000000;
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 800 800'%3E%3Cg %3E%3Ccircle fill='%23000000' cx='400' cy='400' r='600'/%3E%3Ccircle fill='%23180d1c' cx='400' cy='400' r='500'/%3E%3Ccircle fill='%23261431' cx='400' cy='400' r='400'/%3E%3Ccircle fill='%23351947' cx='400' cy='400' r='300'/%3E%3Ccircle fill='%23451e5e' cx='400' cy='400' r='200'/%3E%3Ccircle fill='%23552277' cx='400' cy='400' r='100'/%3E%3C/g%3E%3C/svg%3E");
+	background-attachment: fixed;
+	background-size: cover;
 }
 /*Align the title to the center of the page*/
 .table{
@@ -52,3 +56,89 @@ th {
 .mybutton{
 	widht: 100%;
 }
+
+/* Version Button */
+#version-display{
+    background-color: #e61c66;
+    color: white;
+    box-shadow: 5px 12px 12px #2e6da4;
+    text-align: center;
+    display: inline;
+    font-weight: bolder;
+    padding: 15px;
+    position: fixed;
+    top: 40px;
+    left: -5px;
+    z-index: 3000;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+
+
+ /* Modal Header */
+.modal-header {
+    padding: 2px 16px;
+    background-color: #e61c66;
+    color: white;
+}
+
+/* Modal Body */
+.modal-body {padding: 2px 16px;}
+
+/* Modal Footer */
+.modal-footer {
+    padding: 2px 16px;
+    background-color: #e61c66;
+    color: white;
+}
+
+/* Modal Content */
+.modal-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 0;
+    border: 1px solid #888;
+    width: 100%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+
+}
+
+
+.dev-info{
+    width: 50%;
+    text-align: center;
+    font-family: helvetica;
+    font-weight: bold;
+    display: inline;
+}
+
+.dev-info-logo{
+    width: 50px;
+    float: left;
+}
+
+/*Table paination styling*/
+.paging-nav {
+	text-align: right;
+	padding-top: 2px;
+	font-size: 20px;
+	padding-bottom: 10px;
+  }
+  
+  .paging-nav a {
+	margin: auto 1px;
+	text-decoration: none;
+	display: inline-block;
+	padding: 1px 7px;
+	background: #3287a8;
+	color: white;
+	border-radius: 100px;
+  }
+  
+  .paging-nav .selected-page {
+	font-weight: bold;
+	color: #dc3545;
+  }
+  /* End Table paination styling*/
