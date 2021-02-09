@@ -82,7 +82,7 @@
                   <th>ITEM NAME</th>
                   <th>QUANTITY IN STORE</th>
                   <th>REORDER LEVEL</th>
-                  <!-- <th>TIMESTAMP</th> -->
+                  <th>PRICE LEVEL</th>
                   <th>LAST UPDATE</th>
                   <th>DELETE</th>
               </tr>
@@ -108,7 +108,8 @@
                 {% endif %}
               </td>
             <td><a href="{% url 'reorder_level' instance.id %}">{{instance.reorder_level}}</a></td>
-            <!-- <td>{{instance.timestamp}}</td> -->
+            
+            <td>{{instance.quantity}}</td>
             <td>{{instance.last_updated}}</td>
             <td><a href="{% url 'delete_items' instance.id %}"><img src="{% static 'images/trash.png' %}"></a></td>
         </tr>
